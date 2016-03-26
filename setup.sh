@@ -1,10 +1,12 @@
 #!/bin/bash
 
+echo "deb http://security.debian.org/ jessie-backports main" | sudo tee -a /etc/apt/sources.list
+
 apt-get update
 
 apt-get -y install i3 open-vm-tools-dkms xserver-xorg xdm git terminator emacs \
         texlive-latex-recommended evince python-pip python-matplotlib python-cvxopt \
-        openjdk-7-jdk unzip
+        openjdk-8-jdk unzip
 
 curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
 unzip awscli-bundle.zip
