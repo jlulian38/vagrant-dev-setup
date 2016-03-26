@@ -19,6 +19,8 @@ sudo -u vagrant bash -c 'git clone https://github.com/svetlyak40wt/dotfiler.git 
 sudo -u vagrant bash -c 'git clone https://github.com/jlulian38/dot-userland.git .dotfiles/userland'
 sudo -u vagrant bash -c 'git clone https://github.com/jlulian38/dot-emacs.git .dotfiles/emacs'
 
+# Blow away existing bash config, let dot set it up a new
 sudo -u vagrant bash -c 'rm ~/.bashrc ~/.profile; export PATH=~/.dotfiles/bin/:$PATH; dot update'
+# Run lein
 sudo -u vagrant bash -c 'lein'
 service xdm restart
